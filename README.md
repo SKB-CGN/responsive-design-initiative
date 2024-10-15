@@ -51,7 +51,7 @@ For adapters in the Materialize design, important classes for the correct resolu
 The recommended values for a `<div>` are as follows:
 
 ````
-<div class=‘col s12 m6 l4’>
+<div class="col s12 m6 l4">
 ````
 
 The classes s,m and l must be configured in each `<div>`.
