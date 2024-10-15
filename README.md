@@ -63,13 +63,13 @@ If you use your own CSS styles in your adapters, you should define the necessary
 ````
 /* Style for small Screens */
 @media screen and (max-width: 768px) {
-
+  here your input...
 }
 ````
 
 ````
 /* Style for very small Screens */
 @media screen and (max-width: 600px) {
-
+  here your input...
 }
 ````
