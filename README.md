@@ -20,12 +20,22 @@ The following resolutions are provided:
 
 ### We recommend the following values for the standard layout
 
+#### Input
 ````
 "xs": 12,
 "sm": 12,
 "md": 6,
 "lg": 4,
 "xl": 4
+````
+
+#### Table
+````
+"xs": 12,
+"sm": 12,
+"md": 12,
+"lg": 12,
+"xl": 12
 ````
 
 ### The following entry should be made below ` "type": "tabs"` in order to display a clearly legible table bar:
