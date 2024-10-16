@@ -32,7 +32,7 @@ The following resolutions are provided:
 
 ````
 "tabsStyle": {
-  width: "calc(100% - 100px)"
+  "width": "calc(100% - 100px)"
 },
 ````
 
