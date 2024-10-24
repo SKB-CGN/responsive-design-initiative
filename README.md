@@ -5,6 +5,8 @@ In order to provide a guide and overview of the many existing adapters, here is 
 
 The most important points that need to be taken into account in the adapters for display on mobile devices are listed here.
 
+**How To:** [Check for responsive design compability](https://github.com/iobroker-community-adapters/responsive-design-initiative/blob/main/developer_guide_optimizing_responsive_design.md)
+
 ---
 
 ## jsonConfig Adapter
