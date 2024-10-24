@@ -1,29 +1,25 @@
-# responsive-design-initiative
+# Responsive Design Initiative
 
-Our Responsive Design initiative is all about being able to display and operate ioBroker responsively on all end devices. 
-In order to provide a guide and overview of the many existing adapters, here is a guide for jsonConfig and Materialize Adapter.
-
-The most important points that need to be taken into account in the adapters for display on mobile devices are listed here.
-
-**How To:** [Check for responsive design compability](https://github.com/iobroker-community-adapters/responsive-design-initiative/blob/main/developer_guide_optimizing_responsive_design.md)
+Our **Responsive Design Initiative** ensures that ioBroker works smoothly across all devices, regardless of screen size. To help developers achieve this, we’ve compiled a guide for configuring responsive layouts in the **jsonConfig** and **Materialize** adapters. This document highlights the key points to consider when making adapters mobile-friendly.
 
 ---
 
+**How To:** [Check for responsive design compability](https://github.com/iobroker-community-adapters/responsive-design-initiative/blob/main/developer_guide_optimizing_responsive_design.md)
+
 ## jsonConfig Adapter
 
-For jsonConfig, all resolutions should be taken into account in the respective inputs.
+For **jsonConfig** adapter, it’s important to consider all screen resolutions in the inputs. The following resolution breakpoints should be used:
 
-The following resolutions are provided:
-* xl - width in 1/12 of screen on extra large screens (1536px < width)
-* lg - width in 1/12 of screen on large screens (1200px <= width < 1536px)
-* md - width in 1/12 of screen on middle screens (900px <= width < 1200px)
-* sm - width in 1/12 of screen on small screen (600px <= width < 900px)
-* xs - width in 1/12 of screen on tiny screens (width < 600px)
+* **xl** - Extra large screens (width > 1536px), width as 1/12 of the screen
+* **lg** - Large screens (1200px <= width < 1536px), width as 1/12 of the screen
+* **md** - Medium screens (900px <= width < 1200px), width as 1/12 of the screen
+* **sm** - Small screens (600px <= width < 900px), width as 1/12 of the screen
+* **xs** - Tiny screens (width < 600px), width as 1/12 of the screen
 
 ### We recommend the following values for the standard layout
 
 #### Input
-````
+````JSON
 "xs": 12,
 "sm": 12,
 "md": 6,
@@ -32,7 +28,7 @@ The following resolutions are provided:
 ````
 
 #### Table and Header
-````
+````JSON
 "xs": 12,
 "sm": 12,
 "md": 12,
@@ -40,9 +36,10 @@ The following resolutions are provided:
 "xl": 12
 ````
 
-### The following entry should be made below ` "type": "tabs"` in order to display a clearly legible table bar:
+### Table Styling:
+To ensure that the table bar is legible, add the following entry below "type": "tabs":
 
-````
+````JSON
 "tabsStyle": {
   "width": "calc(100% - 100px)"
 },
@@ -52,43 +49,43 @@ The following resolutions are provided:
 
 ## Materialize Adapter
 
-For adapters in the Materialize design, important classes for the correct resolution should also be used for mobile devices.
+For adapters in the **Materialize** design, important classes for the correct resolution should also be used for mobile devices.
 
-### List of classes for different display sizes:
+### List of classes for different resolutions:
 
-* lx - width in 1/12 of screen on large screens (1200px <= width < 1536px)
-* mx - width in 1/12 of screen on middle screens (900px <= width < 1200px)
-* sx - width in 1/12 of screen on small screen (600px <= width < 900px)
+* lx - For large screens (1200px <= width < 1536px), width as 1/12 of the screen
+* mx - For medium screens (900px <= width < 1200px), width as 1/12 of the screen
+* sx - For small screens (600px <= width < 900px), width as 1/12 of the screen
 
 The recommended values for a `<div>` are as follows:
 
-````
+````HTML
 <div class="col s12 m6 l4">
 ````
 
-The classes s,m and l must be configured in each `<div>`.
+The classes `s`,`m` and `l` must be configured in each `<div>`.
 
-### Custom css for the mobile resolution
+### Custom CSS for the mobile resolution
 
-If you use your own CSS styles in your adapters, you should define the necessary values for the mobile resolution in the area. The area must be listed as follows in the CSS:
+If custom CSS is used, make sure to define specific styles for mobile resolutions. Use the following media queries:
 
-````
+````CSS
 /* Style for small Screens */
 @media screen and (max-width: 768px) {
-  here your input...
+  /* Your styles here */
 }
 ````
 
-````
+````CSS
 /* Style for very small Screens */
 @media screen and (max-width: 600px) {
-  here your input...
+  /* Your styles here */
 }
 ````
-### Integration of css and js files
-It is also important that the following js and css files are included in index_m.html or tab_m.html
+### Integration of CSS and JS Files
+It is also important that the following JS and CSS files are included in `index_m.html` or `tab_m.html`
 
-````
+````HTML
 <!-- Load ioBroker scripts and styles -->
 <link rel="stylesheet" type="text/css" href="../../lib/css/fancytree/ui.fancytree.min.css" />
 <link rel="stylesheet" type="text/css" href="../../css/adapter.css" />
@@ -106,5 +103,5 @@ It is also important that the following js and css files are included in index_m
 <script type="text/javascript" src="words.js"></script>
 ````
 
-adapter-settings.js and adapter.css are very important for a responsive design. These files are provided and maintained by the admin.
+`adapter-settings.js` and `adapter.css` are very important for a responsive design. These files are provided and maintained by the admin.
 
