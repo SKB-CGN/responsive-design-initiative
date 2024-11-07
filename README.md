@@ -105,3 +105,37 @@ It is also important that the following JS and CSS files are included in `index_
 
 `adapter-settings.js` and `adapter.css` are very important for a responsive design. These files are provided and maintained by the admin.
 
+### Fixed table bar for tabs
+If you use tabs design for submenus on your adapter config, please make sure, that the table bar is fixed above the settings and does not scroll, when the page scrolls.
+This can be archived using the following CSS settings.
+
+#### The following examples help you, to set the fixed table bar correctly
+Add the following style to your head tag:
+````CSS
+<style>
+.adapter-body {
+  overflow: hidden !important;
+}
+</style>
+````
+Make sure, to have the first row in the body with a height of 100%.
+```html
+<body>
+  <div class="m adapter-container ">
+    <!-- Add the height to the first row -->
+    <div class="row" style="height: 100%;">
+      <div class="col s12">
+        <ul class="tabs">
+  ...
+```
+All submenus have to have the class ```page``` to have a scrollbar. Make sure, the proper class is added to each submenu (page).
+```html
+<!-- Add the class page to each tab -->
+<div id="tab-main" class="col s12 page">
+  <div class="row">
+    <div class="col s12 m4 l2">
+      <img src="logo.png" class="logo">
+    </div>
+  </div>
+</div>
+```
